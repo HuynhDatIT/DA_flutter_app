@@ -1,5 +1,6 @@
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommer_app/screen/admin/mainAdmin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: MainHomeScreen()));
+    return Scaffold(body: Center(child: MainAdmin()));
   }
 }
