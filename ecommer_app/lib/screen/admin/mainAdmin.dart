@@ -86,7 +86,7 @@ class _MainAdminState extends State<MainAdmin> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   Text(
-                    '',
+                    'sdaasas',
                     style: TextStyle(color: Colors.red),
                   ),
                 ],
