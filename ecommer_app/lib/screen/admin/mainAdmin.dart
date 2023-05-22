@@ -122,7 +122,7 @@ class _MainAdminState extends State<MainAdmin> {
                         child: const Padding(
                           padding: EdgeInsets.all(5),
                           child: Text(
-                            'xac nhận',
+                            'xác nhận',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 15,
