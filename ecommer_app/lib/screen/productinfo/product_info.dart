@@ -346,7 +346,7 @@ class ProductInfo extends StatelessWidget {
               ),
             ),
             SizedBox(height:50),
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -410,7 +410,7 @@ class ProductInfo extends StatelessWidget {
                       color: const Color.fromARGB(255, 235, 229, 229),
                       borderRadius: BorderRadius.circular(6.0),
                     ),
-                    child: const Padding(
+                    child:  Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -456,7 +456,7 @@ class ProductInfo extends StatelessWidget {
                       color: const Color.fromARGB(255, 235, 229, 229),
                       borderRadius: BorderRadius.circular(6.0),
                     ),
-                    child: const Padding(
+                    child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
