@@ -29,14 +29,18 @@ class _Giohang extends State<Giohang>{
                 //Nut QuayLai
                 Container(
                   width: MediaQuery.of(context).size.width/3,
-            height: MediaQuery.of(context).size.height/2,
+            height: MediaQuery.of(context).size.height/2, 
             
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100))
-                      
-                
+                  child:
+                   ElevatedButton(
+                    
+                    style: ElevatedButton.styleFrom(
+                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      primary: Colors.red,
+                     
                     ),
+                    
+                    
                     onPressed: (){}, child: Text('Quay Lại')),
                 ),
                 //Nut Trang Chu
@@ -44,10 +48,16 @@ class _Giohang extends State<Giohang>{
                   width: MediaQuery.of(context).size.width/3,
             height: MediaQuery.of(context).size.height,
             
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100)),              
+                  child: 
+                  ElevatedButton(
+                    
+                    style: ElevatedButton.styleFrom(
+                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      primary: Colors.red,
+                     
                     ),
+                    
+                    
                     onPressed: (){}, child: Text('Trang Chủ')),
                 ),
               ],),
@@ -92,10 +102,16 @@ class _Giohang extends State<Giohang>{
                 Container(
                   width: MediaQuery.of(context).size.width/2.43,
                   height: MediaQuery.of(context).size.height,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100)),              
+                  child: 
+                ElevatedButton(
+                    
+                    style: ElevatedButton.styleFrom(
+                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      primary: Colors.red,
+                     
                     ),
+                    
+                    
                     onPressed: (){}, child: Text('Đặt Hàng')),
                 ),
 

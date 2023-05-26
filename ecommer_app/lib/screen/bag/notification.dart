@@ -32,7 +32,7 @@ class _TB extends State<TB>{
             
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100))
+                      backgroundColor: MaterialStateProperty.all(Colors.red)
                       
                 
                     ),
@@ -44,7 +44,7 @@ class _TB extends State<TB>{
             height: MediaQuery.of(context).size.height,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100)),              
+                      backgroundColor: MaterialStateProperty.all(Colors.red),              
                     ),
                     onPressed: (){}, child: Text('Trang Chủ')),
                 ),
@@ -55,11 +55,14 @@ class _TB extends State<TB>{
 
           Container(
             height: MediaQuery.of(context).size.height/1.7,
-            // child: Column(
-            //   children: [
-
-            //   ],
-            // ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Giỏ hàng trống',style: TextStyle(
+                  fontSize: 25,
+                ),)
+              ],
+            ),
           ),
 
 
@@ -92,7 +95,7 @@ class _TB extends State<TB>{
                   height: MediaQuery.of(context).size.height,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(219, 48, 34, 100)),              
+                      backgroundColor: MaterialStateProperty.all(Colors.red),              
                     ),
                     onPressed: (){}, child: Text('Đặt Hàng')),
                 ),
@@ -124,7 +127,7 @@ class _TB extends State<TB>{
                             // TextButton(onPressed: (){Navigator.pop(context);
                             // }, child: Text('Quay lai')),
                             Container(
-                              margin: EdgeInsets.fromLTRB(5, 30, 5, 5),
+                              margin: EdgeInsets.fromLTRB(5, 25, 5, 5),
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height/3,
                               decoration: BoxDecoration(
@@ -141,7 +144,7 @@ class _TB extends State<TB>{
                     style: ElevatedButton.styleFrom(
                      
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                      primary: Color.fromRGBO(219, 48, 34, 100),
+                      primary: Colors.red,
                 
                     ),
                     onPressed: (){

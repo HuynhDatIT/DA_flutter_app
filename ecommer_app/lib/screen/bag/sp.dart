@@ -14,7 +14,7 @@ class _SP extends State<SP>{
     return Container(
       margin: EdgeInsets.only(top: 5),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height/6.5,
+      height: MediaQuery.of(context).size.height/5,
       decoration: BoxDecoration(
         // color: Colors.blue,
       ),
@@ -71,7 +71,7 @@ class _SP extends State<SP>{
                                     child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                       primary: Color.fromRGBO(219, 48, 34, 100),
+                       primary: Colors.red,
                 
                     ),
                     onPressed: (){
@@ -86,7 +86,7 @@ class _SP extends State<SP>{
                     style: ElevatedButton.styleFrom(
                      
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                      primary: Color.fromRGBO(219, 48, 34, 100),
+                      primary: Colors.red,
                 
                     ),
                     onPressed: (){
@@ -100,7 +100,7 @@ class _SP extends State<SP>{
                         );
                       },);
                     }, 
-                    icon: Icon(Icons.close,size: 28,),
+                    icon: Icon(Icons.close,size: 28,color: Colors.red,),
                     ),               
               ],
             ),
@@ -108,9 +108,9 @@ class _SP extends State<SP>{
           
           //CtnSP
           Container(           
-            height: MediaQuery.of(context).size.height/10.4,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
-              // color: Colors.blue,
+              // color: Colors.yellow,
             ),
             child: Row(
               children: [
@@ -118,20 +118,20 @@ class _SP extends State<SP>{
           Container(
             padding: EdgeInsets.all(2),
             width: MediaQuery.of(context).size.width/4,
-            height: MediaQuery.of(context).size.height/10.6,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
               
-              // color: Colors.yellow,
+              // color: Colors.green,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                   child: 
-                  Image(image: NetworkImage('https://product.hstatic.net/200000525243/product/image_xanh-duong-nhat_5_ao-so-mi-basic-nam-tay-dai-n-m-1902029_13c09a0c35b04eb5845844d90b11585c_master.jpg'),
-                  height:(MediaQuery.of(context).size.height/10),
+                  Image(image: NetworkImage('https://bucket.nhanh.vn/603305-98807/ps/20220514_SNyW5NxiPa0dPihEpckotfko.JPG'),
+                  height:(MediaQuery.of(context).size.height/7),
                   width:(MediaQuery.of(context).size.width/4.5) ,
                   fit: BoxFit.cover,)),
               ],
@@ -141,17 +141,17 @@ class _SP extends State<SP>{
           //Thongtin
           Container(
             width: MediaQuery.of(context).size.width/8,
-            height: MediaQuery.of(context).size.height/10.6,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
               // color: Colors.red,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(padding: EdgeInsets.all(2),
                 child: Text('Tên:'),),
                 Padding(padding: EdgeInsets.all(2),
-                child: Text('Size:'),),
+                child: Text('Loại:'),),
                 Padding(padding: EdgeInsets.all(2),
                 child: Text('Màu:'),),
               ],
@@ -160,18 +160,18 @@ class _SP extends State<SP>{
 
           Container(
             width: MediaQuery.of(context).size.width/4.5,
-            height: MediaQuery.of(context).size.height/10.6,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
               // color: Colors.pink,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(padding: EdgeInsets.all(2),
                 child: Text('Áo sơ mi tay dài'),),
                 Padding(padding: EdgeInsets.all(2),
-                child: Text('XXL'),),
+                child: Text('Áo'),),
                 Padding(padding: EdgeInsets.all(2),
                 child: Text('Xanh da trời'),),
               ],
@@ -181,12 +181,12 @@ class _SP extends State<SP>{
           //Giatien
           Container(
             width: MediaQuery.of(context).size.width/7.7,
-            height: MediaQuery.of(context).size.height/10.6,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
               // color: Colors.blue,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text('100000',style: TextStyle(
                   color: Colors.red,
@@ -205,7 +205,7 @@ class _SP extends State<SP>{
           //Nuttanggiam
           Container(
               width: MediaQuery.of(context).size.width/3.7,
-            height: MediaQuery.of(context).size.height/10.6,
+            height: MediaQuery.of(context).size.height/7,
             decoration: BoxDecoration(
               // color: Colors.orange,
             ),
