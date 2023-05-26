@@ -4,7 +4,8 @@ import '../model/productDto.dart';
 
 class ProductItemWidget extends StatefulWidget {
   ProductDto product;
-  ProductItemWidget({super.key, required this.product});
+  double? height;
+  ProductItemWidget({super.key, required this.product, this.height});
 
   @override
   _ProductItemWidgetState createState() => _ProductItemWidgetState();
@@ -14,7 +15,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.width / 2.5,
+      // height: widget.height ?? MediaQuery.of(context).size.width / 2.6,
       // padding: const EdgeInsets.only(left: 5, right: 5),
       margin: const EdgeInsets.only(left: 5, right: 5),
       decoration: const BoxDecoration(
@@ -34,6 +35,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
             ),
           ),
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 2),
             width: MediaQuery.of(context).size.width / 3.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

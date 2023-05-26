@@ -1,4 +1,5 @@
 import 'package:ecommer_app/common/productItemWidget.dart';
+import 'package:ecommer_app/common/tagWidget.dart';
 import 'package:ecommer_app/model/productDto.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,10 @@ class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
     List<ProductItemWidget> listProductWidget = widget.listProduct
         .take(2)
         .map(
-          (e) => ProductItemWidget(product: e),
+          (e) => ProductItemWidget(
+            product: e,
+            height: MediaQuery.of(context).size.height / 2,
+          ),
         )
         .toList();
     //List<List<ProductItemWidget>> groupListProductWidget;
@@ -25,24 +29,32 @@ class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.only(bottom: 10),
-          height: 50,
-          width: double.infinity,
-          decoration: BoxDecoration(color: Colors.black),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+          color: Colors.grey.withOpacity(0.5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TagWidget(title: 'Quần'),
+              TagWidget(title: 'Áo'),
+              TagWidget(title: 'Giày'),
+            ],
+          ),
         ),
         Container(
             height: MediaQuery.of(context).size.height,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(
-                    child: Container(
-                        height: MediaQuery.of(context).size.width / 2.5,
-                        child: Row(children: listProductWidget))),
-                Expanded(
-                    child: Container(
-                        height: MediaQuery.of(context).size.width / 2.5,
-                        child: Row(children: listProductWidget))),
+                SizedBox(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: listProductWidget,
+                )),
+                SizedBox(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: listProductWidget,
+                )),
               ],
             )),
         const Padding(
