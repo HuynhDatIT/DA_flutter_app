@@ -1,7 +1,7 @@
+import 'package:ecommer_app/common/bottom.dart';
 import 'package:flutter/material.dart';
 import 'screenbag.dart';
 import 'notification.dart';
-
 
 class MainBag extends StatelessWidget {
   const MainBag({super.key});
@@ -10,18 +10,9 @@ class MainBag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: AppBar(
-      ),
-      
-      body: Container(
-        child: ListView(
-          children: [
-            Giohang()
-          ],
-        )
-      )
-      
-    );
+        body: Container(
+            child: ListView(
+      children: [Giohang(), BottomCustom()],
+    )));
   }
 }
