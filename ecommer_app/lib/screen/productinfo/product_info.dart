@@ -286,6 +286,36 @@ class ProductInfo extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15));
                   }),
                 ),
+              ),
+            ),
+            SizedBox(height:50),
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '100.000',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 0, 0),
+                    decoration: TextDecoration.lineThrough,
+                    fontSize: 14,
+                    fontFamily: 'Rufina',
+                    ),
+                  ),
+                  Icon(
+                    Icons.shopping_cart,
+                  ),
+                  Text(
+                    '50.000',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 14,
+                    fontFamily: 'Rufina',
+                    ),
+                  ),
+                ],
+              ),
               )
             ]),
           ),
@@ -356,6 +386,10 @@ class ProductInfo extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child:  Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             '100.000',
@@ -436,6 +470,33 @@ class ProductInfo extends StatelessWidget {
                             )
                           ],
                         ),
+                  child: Image.network(
+                      'https://capvirgo.com/wp-content/uploads/2022/06/wsxc1656255139011_0-600x450.jpg?v=1656231542')),
+              SizedBox(
+                width: 5.0,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 235, 229, 229),
+                      borderRadius: BorderRadius.circular(6.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Van Huy',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'good good good good good good ',
+                            style: TextStyle(fontSize: 16.0),
+                          )
+                        ],
                       ),
                     ),
                   ],
