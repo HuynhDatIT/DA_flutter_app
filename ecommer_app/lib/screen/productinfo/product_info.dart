@@ -26,6 +26,7 @@ class ProductInfo extends StatelessWidget {
             )
           ],
         ),
+        
         body: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
