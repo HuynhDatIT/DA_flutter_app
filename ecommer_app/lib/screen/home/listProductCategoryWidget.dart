@@ -35,7 +35,10 @@ class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TagWidget(title: 'Quần'),
-              TagWidget(title: 'Áo'),
+              TagWidget(
+                title: 'Áo',
+                isSelected: true,
+              ),
               TagWidget(title: 'Giày'),
             ],
           ),
