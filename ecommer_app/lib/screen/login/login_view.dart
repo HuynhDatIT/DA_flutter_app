@@ -9,7 +9,7 @@ class LoginView extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.grey.shade400,
+        backgroundColor: Colors.grey.shade100,
         body: SafeArea(
           child: Padding(
             padding:
@@ -51,7 +51,7 @@ class LoginView extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      const SizedBox(height: 4.0),
+                      const SizedBox(height: 10.0),
                       Expanded(
                         child: TextFormField(
                           style: const TextStyle(
@@ -72,6 +72,10 @@ class LoginView extends StatelessWidget {
                             suffixIconColor: Colors.black,
                             hintText: "Nhập Email",
                             contentPadding: EdgeInsets.zero,
+                            border: InputBorder.none,
+                            focusedBorder: UnderlineInputBorder(),
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
                           ),
                         ),
                       ),
@@ -125,6 +129,10 @@ class LoginView extends StatelessWidget {
                             suffixIconColor: Colors.black,
                             hintText: "Nhập mật khẩu",
                             contentPadding: EdgeInsets.zero,
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
                           ),
                         ),
                       ),

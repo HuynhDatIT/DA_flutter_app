@@ -10,7 +10,7 @@ class RegisterView extends StatelessWidget {
           FocusScope.of(context).unfocus(), // focus màn hình ẩn bàn phím
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.grey.shade500,
+        backgroundColor: Colors.grey.shade100,
         body: SafeArea(
           child: Padding(
             padding:
@@ -78,6 +78,10 @@ class RegisterView extends StatelessWidget {
                             suffixIconColor: Colors.black,
                             hintText: "Nhập tên",
                             contentPadding: EdgeInsets.zero,
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
                           ),
                         ),
                       ),
@@ -131,13 +135,16 @@ class RegisterView extends StatelessWidget {
                             suffixIconColor: Colors.black,
                             hintText: "Nhập Email",
                             contentPadding: EdgeInsets.zero,
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 8.0),
                 const SizedBox(height: 8.0),
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
@@ -185,6 +192,10 @@ class RegisterView extends StatelessWidget {
                             suffixIconColor: Colors.black,
                             hintText: "Nhập mật khẩu",
                             contentPadding: EdgeInsets.zero,
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
                           ),
                         ),
                       ),
