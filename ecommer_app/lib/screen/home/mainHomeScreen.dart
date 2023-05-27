@@ -11,36 +11,40 @@ class MainHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          flex: 9,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                SizedBox(
-                    height: MediaQuery.of(context).size.height / 3,
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: Topwidget(listImage: MockData.listImage),
-                    )),
-                ListProductWidget(
-                    listproduct: MockData.listProductSale,
-                    title: 'SẢN PHẨM GIẢM GIÁ'),
-                ListProductWidget(
-                    listproduct: MockData.listProductNew,
-                    title: 'SẢN PHẨM MỚI NHẤT'),
-                ListProductCategoryWidget(listProduct: MockData.listProduct),
-                ListProductWidget(
-                    listproduct: MockData.listProduct,
-                    title: 'SẢN PHẨM DÀNH CHO BẠN'),
-              ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 9,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    SizedBox(
+                        height: MediaQuery.of(context).size.height / 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Topwidget(listImage: MockData.listImage),
+                        )),
+                    ListProductWidget(
+                        listproduct: MockData.listProductSale,
+                        title: 'SẢN PHẨM GIẢM GIÁ'),
+                    ListProductWidget(
+                        listproduct: MockData.listProductNew,
+                        title: 'SẢN PHẨM MỚI NHẤT'),
+                    ListProductCategoryWidget(listProduct: MockData.listProduct),
+                    ListProductWidget(
+                        listproduct: MockData.listProduct,
+                        title: 'SẢN PHẨM DÀNH CHO BẠN'),
+                  ],
+                ),
+              ),
             ),
-          ),
+            Expanded(flex: 1, child: BottomCustom())
+          ],
         ),
-        Expanded(flex: 1, child: BottomCustom())
-      ],
+      ),
     );
   }
 }
