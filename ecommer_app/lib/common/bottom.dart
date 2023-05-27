@@ -1,3 +1,5 @@
+import 'package:ecommer_app/screen/bag/mainbag.dart';
+import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class BottomCustom extends StatefulWidget {
@@ -22,22 +24,30 @@ class _BottomCustomState extends State<BottomCustom> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconCustomer(Icons.home_outlined, "Home", Colors.red),
-            IconCustomer(Icons.shopping_cart_outlined, "Shoping", Colors.black),
-            IconCustomer(Icons.shopping_bag_outlined, "Bag", Colors.black),
-            IconCustomer(Icons.person_3_outlined, "Profier", Colors.black),
+            IconCustomer(Icons.home_outlined, "Home", Colors.red,
+                MainHomeScreen(), context),
+            IconCustomer(Icons.shopping_cart_outlined, "Shoping", Colors.black,
+                MainHomeScreen(), context),
+            IconCustomer(Icons.shopping_bag_outlined, "Bag", Colors.black,
+                MainBag(), context),
+            IconCustomer(Icons.person_3_outlined, "Profier", Colors.black,
+                MainHomeScreen(), context),
           ],
         ));
   }
 }
 
-Widget IconCustomer(IconData iconData, String title, Color color) {
+Widget IconCustomer(IconData iconData, String title, Color color,
+    Widget nextwidget, BuildContext context) {
   return Container(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IconButton(
-          onPressed: () => {},
+          onPressed: () => {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => nextwidget))
+          },
           icon: Icon(
             iconData,
             color: color,

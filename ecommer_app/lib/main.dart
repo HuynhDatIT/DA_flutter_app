@@ -1,4 +1,5 @@
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
+import 'package:ecommer_app/screen/login/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommer_app/screen/bag/mainbag.dart';
 void main() {
@@ -30,6 +31,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MainHomeScreen();
+    return LoginView();
   }
 }
