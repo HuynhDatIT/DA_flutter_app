@@ -1,4 +1,5 @@
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
+import 'package:ecommer_app/screen/register/register_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -144,7 +145,12 @@ class LoginView extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterView()));
+                          },
                           child: const Text(
                             'Đăng ký',
                             style: TextStyle(

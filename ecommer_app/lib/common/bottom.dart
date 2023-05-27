@@ -1,4 +1,5 @@
 import 'package:ecommer_app/product/productScreen.dart';
+import 'package:ecommer_app/screen/admin/mainAdmin.dart';
 import 'package:ecommer_app/screen/bag/mainbag.dart';
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _BottomCustomState extends State<BottomCustom> {
             IconCustomer(Icons.shopping_bag_outlined, "Bag", Colors.black,
                 MainBag(), context),
             IconCustomer(Icons.person_3_outlined, "Profier", Colors.black,
-                MainHomeScreen(), context),
+                MainAdmin(), context),
           ],
         ));
   }

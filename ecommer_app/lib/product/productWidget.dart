@@ -1,3 +1,5 @@
+import 'package:ecommer_app/common/bottom.dart';
+
 import 'product.dart';
 import 'package:ecommer_app/model/productDto.dart';
 import 'package:ecommer_app/screen/home/listProductWidget.dart';
@@ -107,187 +109,127 @@ class ProductWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: Container(
-                  child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
-                        childAspectRatio: 1,
-                      ),
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Color.fromARGB(255, 222, 220, 204),
-                          ),
-                          child: Column(
-                            children: [
-                             Product(product_widget: ProductDto('assets/images/product1.jpg','vay chu a cong so','quan',50000,100000,1)),
-                            ],
-                          ),
-                        );
-                      }),
-                ),
-              ),
-              Row(
-                //trang
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(top: 30, bottom: 10),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Trang:',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 17,
-                          ),
-                        ),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '1',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '2',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '3',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '4',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '5',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '6',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )),
-                      ],
+              child: Container(
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 1,
                     ),
-                  ),
-                ],
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Color.fromARGB(255, 222, 220, 204),
+                        ),
+                        child: Column(
+                          children: [
+                            Product(
+                                product_widget: ProductDto(
+                                    'assets/images/product1.jpg',
+                                    'vay chu a cong so',
+                                    'quan',
+                                    50000,
+                                    100000,
+                                    1)),
+                          ],
+                        ),
+                      );
+                    }),
               ),
-              Padding(
+            ),
+            Row(
+              //trang
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(top: 30, bottom: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Trang:',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 17,
+                        ),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '1',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '2',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '3',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '4',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '5',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '6',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          )),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Padding(
                 //button shop
                 padding: const EdgeInsets.only(left: 20, right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/image_product/home.png',
-                              height: 50,
-                            ),
-                            Text(
-                              'Home',
-                              style: TextStyle(color: Colors.red),
-                            )
-                          ],
-                        )),
-                    TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/image_product/Shop.png',
-                              height: 50,
-                            ),
-                            Text(
-                              'Shop',
-                              style: TextStyle(
-                                  color:
-                                      const Color.fromARGB(255, 188, 181, 181)),
-                            )
-                          ],
-                        )),
-                    TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/image_product/bag.png',
-                              height: 50,
-                            ),
-                            Text(
-                              'Bag',
-                              style: TextStyle(
-                                  color:
-                                      const Color.fromARGB(255, 188, 181, 181)),
-                            )
-                          ],
-                        )),
-                    TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/image_product/profile.png',
-                              height: 50,
-                            ),
-                            Text(
-                              'Profile',
-                              style: TextStyle(
-                                  color:
-                                      const Color.fromARGB(255, 188, 181, 181)),
-                            )
-                          ],
-                        )),
-                  ],
-                ),
-              ),
+                child: BottomCustom()),
           ],
         ),
       ),
