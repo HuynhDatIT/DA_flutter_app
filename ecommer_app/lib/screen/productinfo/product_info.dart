@@ -1,8 +1,3 @@
-//vanhuy
-//tao trang gd 18/5
-//chinh sua gd 25/5
-
-
 import 'package:flutter/material.dart';
 
 class ProductInfo extends StatelessWidget {
