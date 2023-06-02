@@ -30,6 +30,9 @@ class EditProfileView extends StatelessWidget {
         automaticallyImplyLeading: true, // tự động tạo nút quay lại màn hình
         elevation: 0.0,
         backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         title: const Text(
           "Thay đổi thông tin",
           style: TextStyle(
