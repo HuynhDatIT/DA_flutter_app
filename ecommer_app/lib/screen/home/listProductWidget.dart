@@ -42,7 +42,7 @@ class _ListProductWidgetState extends State<ListProductWidget> {
             height: 1,
             color: Color.fromARGB(255, 146, 143, 143),
           ),
-        )
+        ),
       ],
     );
   }
