@@ -181,10 +181,10 @@ class _SP extends State<SP> {
                         padding: EdgeInsets.all(2),
                         child: Text('Loại:'),
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(2),
-                        child: Text('Màu:'),
-                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.all(2),
+                      //   child: Text('Màu:'),
+                      // ),
                     ],
                   ),
                 ),
@@ -207,10 +207,7 @@ class _SP extends State<SP> {
                         padding: EdgeInsets.all(2),
                         child: Text('Áo'),
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(2),
-                        child: Text('Xanh da trời'),
-                      ),
+                      
                     ],
                   ),
                 ),
