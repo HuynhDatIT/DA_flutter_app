@@ -44,7 +44,7 @@ class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
           ),
         ),
         Container(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.width / 0.8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

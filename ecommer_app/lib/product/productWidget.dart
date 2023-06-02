@@ -128,12 +128,13 @@ class ProductWidget extends StatelessWidget {
                           children: [
                             Product(
                                 product_widget: ProductDto(
-                                    'assets/images/product1.jpg',
-                                    'vay chu a cong so',
-                                    'quan',
-                                    50000,
-                                    100000,
-                                    1)),
+                                    path: 'assets/images/product1.jpg',
+                                    name: 'vay chu a cong so',
+                                    category: 'quan',
+                                    price: 50000,
+                                    priceDiscount: 100000,
+                                    type: 1,
+                                    id: '1')),
                           ],
                         ),
                       );

@@ -8,98 +8,68 @@ class MockData {
     new ImageDto(path: 'assets/images/3.jpg'),
   ];
   static List<ProductDto> listProductSale = [
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        10000, 3),
+    ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 3, id: '1'),
+    ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 3, id: '1'),
+    ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 3, id: '1'),
   ];
 
   static List<ProductDto> listProductNew = [
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 1),
+    ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+       ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+       ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+       ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+       ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+       ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 1, id: '1'),
+    
   ];
   static List<ProductDto> listProductForYou = [
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
   ];
   static List<ProductDto> listProduct = [
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-    ProductDto(
-        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+   
   ];
   static List<ProductDto> listProductWidget = [
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
+      ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
   ];
 }

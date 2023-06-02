@@ -13,7 +13,7 @@ class Product extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Image.asset(
-            product_widget.path,
+            product_widget.path ??'',
             width: MediaQuery.of(context).size.width / 2,
           height: MediaQuery.of(context).size.width/2.8,
             fit: BoxFit.fill,
@@ -21,11 +21,11 @@ class Product extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: Text(product_widget.name),
+          child: Text(product_widget.name ??''),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: Text(product_widget.category),
+          child: Text(product_widget.category ??''),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

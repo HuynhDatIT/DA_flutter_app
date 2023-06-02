@@ -6,12 +6,16 @@ import 'package:ecommer_app/screen/home/listProductWidget.dart';
 import 'package:ecommer_app/product/productScreen.dart';
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:ecommer_app/screen/login/login_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommer_app/screen/admin/mainAdmin.dart';
 
 import 'package:ecommer_app/screen/bag/mainbag.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
