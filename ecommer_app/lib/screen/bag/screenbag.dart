@@ -9,25 +9,59 @@ class Giohang extends StatefulWidget {
 }
 
 class _Giohang extends State<Giohang> {
+  int sl = 5;
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width/1.8,
+            height: MediaQuery.of(context).size.height/7,
+            decoration: BoxDecoration(
+              // color: Colors.red,
+            ),
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(child: 
+                  Row(
+                    children: [
+                      Icon(Icons.shopping_bag,size: 30,),
+                      Text(':',style: TextStyle(
+                        fontSize: 15,
+                      ),),
+                      Text('5',style: TextStyle(
+                        fontSize: 20),),
+                    ],
+                  )
+                  
+                  ),
+                  
+                  Text('Shop',style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+                  ),),
+                  
+                  
+                ],
+              ),
+          ),
+
+
+          Container(
+            height: MediaQuery.of(context).size.height/1.7,
             child: ListView(
               children: [
+                
                 SP(),
                 SP(),
                 SP(),
                 SP(),
                 SP(),
-                SP(),
-                SP(),
-                SP(),
-                SP(),
-                SP(),
+               
+               
               ],
             ),
           ),
@@ -64,7 +98,9 @@ class _Giohang extends State<Giohang> {
                               borderRadius: BorderRadius.circular(5)),
                           primary: Colors.red,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         child: Text('Đặt Hàng')),
                   ),
                 ],
