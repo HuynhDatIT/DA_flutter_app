@@ -2,7 +2,8 @@ import 'package:ecommer_app/common/bottom.dart';
 import 'package:flutter/material.dart';
 
 class ProductInfo extends StatelessWidget {
-  const ProductInfo({super.key});
+  String productId;
+  ProductInfo({super.key, required this.productId});
 
   @override
   Widget build(BuildContext context) {

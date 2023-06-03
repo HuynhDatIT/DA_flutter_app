@@ -192,7 +192,7 @@ class ProductWidget extends StatelessWidget {
                         child: Column(
                           children: [
                             ListProductWidget(
-                                listproduct: MockData.listProductwidget,
+                                listproduct: MockData.listProduct,
                                 title: ''),
                           ],
                         ),

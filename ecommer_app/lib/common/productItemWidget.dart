@@ -15,52 +15,58 @@ class ProductItemWidget extends StatefulWidget {
 class _ProductItemWidgetState extends State<ProductItemWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // height: widget.height ?? MediaQuery.of(context).size.width / 2.6,
-      // padding: const EdgeInsets.only(left: 5, right: 5),
-      margin: const EdgeInsets.only(left: 5, right: 5),
-      decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 223, 221, 221),
-          borderRadius: BorderRadius.all(Radius.circular(7))),
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(7), topLeft: Radius.circular(7)),
-            child: Image(
-              image: AssetImage(widget.product.path ?? ''),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProductInfo(productId: '1',)));
+      },
+      child: Container(
+        // height: widget.height ?? MediaQuery.of(context).size.width / 2.6,
+        // padding: const EdgeInsets.only(left: 5, right: 5),
+        margin: const EdgeInsets.only(left: 5, right: 5),
+        decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 223, 221, 221),
+            borderRadius: BorderRadius.all(Radius.circular(7))),
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(7), topLeft: Radius.circular(7)),
+              child: Image(
+                image: AssetImage(widget.product.path ?? ''),
+                width: MediaQuery.of(context).size.width / 3.0,
+                height: MediaQuery.of(context).size.width / 2.5,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
               width: MediaQuery.of(context).size.width / 3.0,
-              height: MediaQuery.of(context).size.width / 2.5,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 2),
-            width: MediaQuery.of(context).size.width / 3.0,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                widget.product.type == 2
-                    ? RowStartNonIcon(widget.product.name ?? '')
-                    : RowStartIcon(
-                        widget.product.name ?? '', widget.product.type ?? 3),
-                Padding(
-                  padding: const EdgeInsets.only(top: 4, bottom: 4),
-                  child: Text(
-                    widget.product.category ?? '',
-                    style: const TextStyle(fontSize: 12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  widget.product.type == 2
+                      ? RowStartNonIcon(widget.product.name ?? '')
+                      : RowStartIcon(
+                          widget.product.name ?? '', widget.product.type ?? 3),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4, bottom: 4),
+                    child: Text(
+                      widget.product.category ?? '',
+                      style: const TextStyle(fontSize: 12),
+                    ),
                   ),
-                ),
-                widget.product.type == 3
-                    ? RowEndSale(widget.product.price.toString(),
-                        widget.product.priceDiscount.toString())
-                    : RowEnd(widget.product.price.toString())
-              ],
-            ),
-          )
-        ],
+                  widget.product.type == 3
+                      ? RowEndSale(widget.product.price.toString(),
+                          widget.product.priceDiscount.toString())
+                      : RowEnd(widget.product.price.toString())
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
