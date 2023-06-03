@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommer_app/model/Order.dart';
 import 'package:ecommer_app/model/productDto.dart';
 
 import '../model/cart.dart';
@@ -11,6 +12,9 @@ class Firebasedata {
 
   static CollectionReference cart =
       FirebaseFirestore.instance.collection('carts');
+      
+  static CollectionReference order =
+      FirebaseFirestore.instance.collection('orders');
 
   static Future<void> addProductSale() {
     return product
@@ -151,5 +155,23 @@ class Firebasedata {
     });
     //print('-- ${listProduct[0].id}');
     return listcart;
+  }
+
+    static Future<List<OrderDto>> getOrder() async {
+    List<OrderDto> listorder = new List<OrderDto>.filled(
+        0,
+        OrderDto(
+            id: '',orderCode: '', status: '', total: 0, accountId: ''),
+        growable: true);
+
+    await order.get().then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        final order = OrderDto.fromJson(doc.data() as Map<String, dynamic>);
+        order.id = doc.id.toString();
+        listorder.add(order);
+      });
+    });
+    //print('-- ${listProduct[0].id}');
+    return listorder;
   }
 }
