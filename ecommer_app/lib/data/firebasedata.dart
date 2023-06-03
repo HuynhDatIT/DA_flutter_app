@@ -116,5 +116,4 @@ class Firebasedata {
         .catchError((error) => print("Failed to add cart: $error"));
   }
  
- 
 }

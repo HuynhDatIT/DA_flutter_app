@@ -21,7 +21,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
             context,
             MaterialPageRoute(
                 builder: (context) => ProductInfo(
-                      productId: '1',
+                      productDto: widget.product,
                     )));
       },
       child: Container(
