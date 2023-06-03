@@ -1,11 +1,5 @@
-import 'dart:io';
-
 import 'package:ecommer_app/common/bottom.dart';
-import 'package:ecommer_app/data/mockData.dart';
-
-import 'product.dart';
-import 'package:ecommer_app/model/productDto.dart';
-import 'package:ecommer_app/screen/home/listProductWidget.dart';
+import 'pagenumber.dart';
 import 'package:flutter/material.dart';
 
 class ProductWidget extends StatelessWidget {
@@ -175,112 +169,9 @@ class ProductWidget extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 80,
-                      crossAxisSpacing: 20,
-                      childAspectRatio: 0.8,
-                    ),
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Color.fromARGB(255, 222, 220, 204),
-                        ),
-                        child: Column(
-                          children: [
-                            ListProductWidget(
-                                listproduct: MockData.listProduct,
-                                title: ''),
-                          ],
-                        ),
-                      );
-                    }),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(5, 20, 5, 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Trang:',
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 17,
-                    ),
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '1',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '2',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '3',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '4',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '5',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '6',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.red,
-                      )),
-                ],
-              ),
-            ),
+                child: PageNumber(),
+              ),),
+                
             Padding(
                 //button shop
                 padding: const EdgeInsets.only(left: 20, right: 20),

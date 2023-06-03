@@ -1,17 +1,30 @@
 import 'package:ecommer_app/model/productDto.dart';
-import 'package:ecommer_app/screen/home/listProductWidget.dart';
 import 'package:flutter/material.dart';
-import '../../common/productItemWidget.dart';
-import 'product.dart';
 
-class Product extends StatelessWidget {
-  ProductDto product_widget;
-  Product({super.key, required this.product_widget});
+import '../../common/productItemWidget.dart';
+
+class Product extends StatefulWidget {
+  ProductDto product;
+  Product({super.key, required this.product});
+
   @override
-  Widget build(BuildContext context) {
+  State<Product> createState() => _ProductState();
+}
+
+class _ProductState extends State<Product> {
+  @override
+  Widget build(BuildContext context) {  
+   ProductItemWidget itemproduct =
+        widget.product.map((e) => ProductItemWidget(product: e)).toList();
     return Column(
-       children: [
-       ],
+      children: [
+        Container(
+            height: MediaQuery.of(context).size.width / 1.72,
+            child: Column(
+              children: itemproduct,
+            ),
+            ),
+      ],
     );
   }
 }
