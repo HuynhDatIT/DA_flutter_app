@@ -4,47 +4,82 @@ import 'package:ecommer_app/screen/home/listProductWidget.dart';
 import 'package:ecommer_app/screen/home/topwidget.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/firebasedata.dart';
 import '../../data/mockData.dart';
+import '../../model/productDto.dart';
 
-class MainHomeScreen extends StatelessWidget {
+class MainHomeScreen extends StatefulWidget {
   MainHomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MainHomeScreen> createState() => _MainHomeScreenState();
+}
+
+class _MainHomeScreenState extends State<MainHomeScreen> {
+  bool loadding = false;
+  List<ProductDto> productsSale = [];
+  List<ProductDto> productsNew = [];
+  List<ProductDto> productsNone = [];
+
+  @override
+  void initState() {
+    super.initState();
+   
+    fetchData();
+   
+  }
+
+  Future<void> fetchData() async {
+    setState(() {
+      loadding = true;
+    });
+
+    productsSale = await Firebasedata.getProducts(1);
+    productsNone = await Firebasedata.getProducts(2);
+    productsNew = await Firebasedata.getProducts(3);
+      
+    setState(() {
+      loadding = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 9,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    SizedBox(
-                        height: MediaQuery.of(context).size.height / 3,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: Topwidget(listImage: MockData.listImage),
-                        )),
-                    ListProductWidget(
-                        listproduct: MockData.listProductSale,
-                        title: 'SẢN PHẨM GIẢM GIÁ'),
-                    ListProductWidget(
-                        listproduct: MockData.listProductNew,
-                        title: 'SẢN PHẨM MỚI NHẤT'),
-                    ListProductCategoryWidget(listProduct: MockData.listProduct),
-                    ListProductWidget(
-                        listproduct: MockData.listProduct,
-                        title: 'SẢN PHẨM DÀNH CHO BẠN'),
-                  ],
-                ),
+            body: Center(
+              child: loadding
+        ? CircularProgressIndicator() : Column(
+                children: [
+                  Expanded(
+                    flex: 9,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height / 3,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 20),
+                                child: Topwidget(listImage: MockData.listImage),
+                              )),
+                          ListProductWidget(
+                              listproduct: productsSale,
+                              title: 'SẢN PHẨM GIẢM GIÁ'),
+                          ListProductWidget(
+                              listproduct: productsNew,
+                              title: 'SẢN PHẨM MỚI NHẤT'),
+                          ListProductCategoryWidget(listProduct: productsNone),
+                          ListProductWidget(
+                              listproduct: productsNone,
+                              title: 'SẢN PHẨM DÀNH CHO BẠN'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(flex: 1, child: BottomCustom())
+                ],
               ),
             ),
-            Expanded(flex: 1, child: BottomCustom())
-          ],
-        ),
-      ),
-    );
+          );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:ecommer_app/common/bottom.dart';
+import 'package:ecommer_app/screen/admin/filter_admin.dart';
 import 'package:flutter/material.dart';
 
 class MainAdmin extends StatefulWidget {
@@ -48,7 +49,7 @@ class _MainAdminState extends State<MainAdmin> {
                   Text('Tánh Trần ',
                       textAlign: TextAlign.end,
                       style: TextStyle(
-                          height: 2, fontSize: 34, color: Colors.black)),
+                          height: 1, fontSize: 34, color: Colors.black)),
                 ],
               ),
             ),
@@ -61,124 +62,12 @@ class _MainAdminState extends State<MainAdmin> {
                   style: TextStyle(
                       // fontFamily: 'Readex Pro',
                       fontSize: 44,
-                      height: 2),
+                      height: 1),
                 ),
               ],
             ),
-            Flexible(
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 8, top: 8),
-                width: double.infinity,
-                decoration: const BoxDecoration(color: Colors.red),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                      child: Text(
-                        'Mã ĐH',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                        // textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Text(
-                      'Trạng Thái',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                    Text(
-                      '',
-                      style: TextStyle(color: Colors.red),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListView(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: Text(
-                        'DH001',
-                        style: TextStyle(
-                          fontSize: 20,
-                          // fontStyle: FontStyle.italic
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        TextButton(
-                          style: TextButton.styleFrom(
-                              backgroundColor: Colors.green),
-                          child: const Padding(
-                            padding: EdgeInsets.all(5),
-                            child: Text(
-                              'xac nhận',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                          onPressed: () => {},
-                        ),
-                        TextButton(
-                          style:
-                              TextButton.styleFrom(backgroundColor: Colors.red),
-                          child: const Padding(
-                            padding: EdgeInsets.all(5),
-                            child: Text(
-                              'Huỷ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                          onPressed: () => showDialog(
-                              context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                    title: const Text('Thông báo'),
-                                    content: const Text(
-                                        'Bạn có muốn huỷ đơn hàng này không'),
-                                    actions: <Widget>[
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(context, 'Xác nhận'),
-                                        child: const Text('Xác Nhận'),
-                                        style: TextButton.styleFrom(
-                                            backgroundColor: Colors.green,
-                                            foregroundColor: Colors.white),
-                                      ),
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(context, 'Huỷ'),
-                                        child: const Text('Huỷ'),
-                                        style: TextButton.styleFrom(
-                                            backgroundColor: Colors.red,
-                                            foregroundColor: Colors.white),
-                                      )
-                                    ],
-                                  )),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            BottomCustom()
+            Expanded(child: Filteradmin()),
+            BottomCustom(),
           ],
         ),
       ),
