@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String id;
+  String id;
+  String priceOder;
+  String nameOder;
+  int Number;
   bool isConfirmed;
   bool isCanceled;
   int confirmationCount;
   int cancellationCount;
 
-  Product(this.id, this.isConfirmed, this.isCanceled, this.confirmationCount,
-      this.cancellationCount);
+  Product(this.id, this.priceOder,this.Number, this.nameOder, this.isConfirmed,
+      this.isCanceled, this.confirmationCount, this.cancellationCount);
 }
 
 class Filteradmin extends StatefulWidget {
@@ -18,15 +21,14 @@ class Filteradmin extends StatefulWidget {
 
 class _AdminPageState extends State<Filteradmin> {
   List<Product> products = [
-    Product('MDH001', false, false, 0, 0),
-    Product('MDH002', false, false, 0, 0),
-    Product('MD003', false, false, 0, 0),
-    Product('MD004', false, false, 0, 0),
-    Product('MD005', false, false, 0, 0),
-    Product('MD006', false, false, 0, 0),
-    Product('MD007', false, false, 0, 0),
-    Product('MD008', false, false, 0, 0),
-    Product('MD009', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
+    Product('0T001', '49000', 3,'Tấn Nghĩa', false, false, 0, 0),
   ];
 
   List<Product> filteredProducts = [];
@@ -175,55 +177,81 @@ class _AdminPageState extends State<Filteradmin> {
           ],
         ),
         Flexible(
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 8, top: 8),
-                width: double.infinity,
-                decoration: const BoxDecoration(color: Colors.red),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(
-                        'Mã ĐH',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                        // textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 50),
-                      child: Text(
-                        'Trạng Thái',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  ],
+          child: Container(
+            padding: const EdgeInsets.only(bottom: 8, top: 8),
+            width: double.infinity,
+            decoration: const BoxDecoration(color: Colors.red),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text(
+                    'Đơn Hàng',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    // textAlign: TextAlign.start,
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: EdgeInsets.only(right: 50),
+                  child: Text(
+                    'Trạng Thái',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ],
             ),
+          ),
+        ),
         Container(
-          height: 300,
+          height: 350,
           child: Expanded(
             child: ListView.builder(
               itemCount: filteredProducts.length,
               itemBuilder: (context, index) {
                 final product = filteredProducts[index];
-        
+
                 return ListTile(
-                  title: Text(product.id),
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: 'ID: ${product.id}',
+                          style: TextStyle(color: Colors.black)),
+                      TextSpan(text: '\n'),
+                      TextSpan(
+                          text: 'Giá: ${product.priceOder}',
+                          style: TextStyle(color: Colors.black)),
+                      WidgetSpan(child: SizedBox(width: 10,)),
+                      TextSpan(
+                        text: 'Sl:${product.Number}',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(text: '\n'),
+                      TextSpan(
+                          text: 'Người đặt:${product.nameOder}',
+                          style: TextStyle(color: Colors.black))
+                    ]),
+                  ),
                   subtitle: Row(
                     children: [
                       Visibility(
                         visible: product.isConfirmed,
-                        child: Text('Đã xác nhận (${product.confirmationCount})'),
+                        child: Text(
+                          'Đã xác nhận',
+                          style: TextStyle(
+                              color: Colors.green, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       SizedBox(width: 8),
                       Visibility(
-                        visible: product.isCanceled,
-                        child: Text('Đã huỷ (${product.cancellationCount})'),
-                      ),
+                          visible: product.isCanceled,
+                          child: Text(
+                            'Đã huỷ',
+                            style: TextStyle(
+                                color: Colors.red, fontWeight: FontWeight.bold),
+                          )),
                     ],
                   ),
                   trailing: Row(
@@ -290,4 +318,3 @@ class _AdminPageState extends State<Filteradmin> {
     );
   }
 }
-
