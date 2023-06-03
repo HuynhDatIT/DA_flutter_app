@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309156576217",
+    "project_id": "daltdd-e354e",
+    "storage_bucket": "daltdd-e354e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309156576217:android:7fb7b35cafc735577277c8",
+        "android_client_info": {
+          "package_name": "com.example.ecommer_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309156576217-qac081dhlr67rdr88n133ffftes3edj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWaiW2bNYJqa3ulzKY4dpSZFv1YP2OdlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309156576217-qac081dhlr67rdr88n133ffftes3edj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
