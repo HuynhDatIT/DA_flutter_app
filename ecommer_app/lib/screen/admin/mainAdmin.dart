@@ -27,7 +27,7 @@ class _MainAdminState extends State<MainAdmin> {
                     'Adminitrator',
                     textAlign: TextAlign.justify,
                     style:
-                        TextStyle(height: 2, fontSize: 44, color: Colors.black),
+                        TextStyle(height: 1, fontSize: 34, color: Colors.black),
                   ),
                 ),
               ],
@@ -41,15 +41,15 @@ class _MainAdminState extends State<MainAdmin> {
                     borderRadius: BorderRadius.circular(100),
                     child: Image.asset(
                       'assets/images/product1.jpg',
-                      width: 100,
-                      height: 100,
+                      width: 80,
+                      height: 80,
                       fit: BoxFit.cover,
                     ),
                   ),
                   Text('Tánh Trần ',
                       textAlign: TextAlign.end,
                       style: TextStyle(
-                          height: 1, fontSize: 34, color: Colors.black)),
+                          height: 1, fontSize: 24, color: Colors.black)),
                 ],
               ),
             ),
@@ -61,7 +61,7 @@ class _MainAdminState extends State<MainAdmin> {
                   'Xử lý đơn hàng',
                   style: TextStyle(
                       // fontFamily: 'Readex Pro',
-                      fontSize: 44,
+                      fontSize: 34,
                       height: 1),
                 ),
               ],
