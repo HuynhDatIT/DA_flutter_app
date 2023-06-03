@@ -120,7 +120,7 @@ class _OrderManagementViewState extends State<OrderManagementView>
                                               maxHeight: 55,
                                               maxWidth: 55,
                                               child: Image.asset(
-                                                detail.products.path,
+                                                detail.products.path??'',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -132,7 +132,7 @@ class _OrderManagementViewState extends State<OrderManagementView>
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(detail.products.name),
+                                                  Text(detail.products.name??''),
                                                   Padding(
                                                     padding: const EdgeInsets
                                                             .symmetric(

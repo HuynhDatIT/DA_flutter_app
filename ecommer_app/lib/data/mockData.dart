@@ -90,15 +90,15 @@ class MockData {
             OrderDetailsDTO(
               color: 'dddddd',
               orderId: 1,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               quantity: 2,
               size: 'L',
             ),
             OrderDetailsDTO(
               orderId: 1,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               color: '000000', // mã hex
               quantity: 1,
               size: 'XL',
@@ -118,15 +118,15 @@ class MockData {
             OrderDetailsDTO(
               color: 'dddddd',
               orderId: 2,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               quantity: 2,
               size: 'L',
             ),
             OrderDetailsDTO(
               orderId: 2,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               color: '000000', // mã hex
               quantity: 1,
               size: 'XL',
@@ -150,15 +150,15 @@ class MockData {
             OrderDetailsDTO(
               color: 'dddddd',
               orderId: 2,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               quantity: 2,
               size: 'L',
             ),
             OrderDetailsDTO(
               orderId: 2,
-              products: ProductDto('assets/images/product1.jpg',
-                  'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+              products:   ProductDto(path: 'assets/images/product1.jpg', name: 'Váy chữ A công sở',category: 'Quần', price: 59000,
+       priceDiscount: 10000,type: 2, id: '1'),
               color: '000000', // mã hex
               quantity: 1,
               size: 'XL',
