@@ -1,4 +1,5 @@
-import 'package:ecommer_app/product/productWidget.dart';
+
+import 'package:ecommer_app/screen/detail/productWidget.dart';
 import 'package:flutter/material.dart';
 import '../../data/mockData.dart';
 
