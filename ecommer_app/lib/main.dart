@@ -1,5 +1,6 @@
 import 'package:ecommer_app/common/productItemWidget.dart';
 import 'package:ecommer_app/data/mockData.dart';
+import 'package:ecommer_app/data/shopdata.dart';
 import 'package:ecommer_app/model/productDto.dart';
 import 'package:ecommer_app/screen/detail/productScreen.dart';
 import 'package:ecommer_app/screen/detail/productWidget.dart';
@@ -12,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommer_app/screen/admin/mainAdmin.dart';
 
 import 'package:ecommer_app/screen/bag/mainbag.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,11 +27,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return ChangeNotifierProvider(
+      create: (context) => CartModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(primarySwatch: Colors.blueGrey),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
@@ -46,6 +51,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return  LoginView();
+    return const LoginView();
   }
 }
