@@ -28,7 +28,7 @@ class Firebasedata {
           'path': 'assets/images/product1.jpg',
           'name': 'Váy chữ A công sở',
           'categoryName': 'Quần',
-          'categoryId': '1',
+          'categoryId': '2',
           'price': 59000,
           'priceDiscount': 100000,
           'type': 1
@@ -43,7 +43,7 @@ class Firebasedata {
           'path': 'assets/images/product1.jpg',
           'name': 'Váy chữ A công sở',
           'categoryName': 'Quần',
-          'categoryId': '1',
+          'categoryId': '2',
           'price': 59000,
           'priceDiscount': 100000,
           'type': 2
@@ -52,14 +52,36 @@ class Firebasedata {
         .catchError((error) => print("Failed to add user: $error"));
   }
 
-  static Future<List<ProductDto>> getProducts(int? type) async {
-    List<ProductDto> listProduct = [];
+  static Future<List<ProductDto>> getProducts(
+      int? type, int? categoryId) async {
+    List<ProductDto> listProduct = new List<ProductDto>.filled(
+        0,
+        ProductDto(
+            path: '',
+            name: '',
+            category: '',
+            price: 0,
+            priceDiscount: 0,
+            type: 0,
+            id: ''),
+        growable: true);
 
-    await FirebaseFirestore.instance
-        .collection('products')
-        .where('type', isEqualTo: type ?? 2)
-        .get()
-        .then((QuerySnapshot querySnapshot) {
+    Query<Map<String, dynamic>> query =
+        FirebaseFirestore.instance.collection('products');
+
+    if (type != null) {
+      query = FirebaseFirestore.instance
+          .collection('products')
+          .where('type', isEqualTo: type);
+    }
+
+    if (categoryId != null) {
+      query = FirebaseFirestore.instance
+          .collection('products')
+          .where('categoryId', isEqualTo: categoryId.toString());
+    }
+
+    await query.get().then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
         final product = ProductDto.fromJson(doc.data() as Map<String, dynamic>);
         product.id = doc.id;
@@ -69,6 +91,4 @@ class Firebasedata {
     print(listProduct.length);
     return listProduct;
   }
-
-  
 }

@@ -12,8 +12,8 @@ class Addbutton extends StatelessWidget {
         // final products = await Firebasedata.getProducts();
         // print(products.length);
          Firebasedata.addProductSale();
-        //Firebasedata.addProductNew();
-        // Firebasedata.addProduct();
+        Firebasedata.addProductNew();
+         Firebasedata.addProduct();
       },
       child: const Image(
         image: AssetImage('assets/icons/add.png'),

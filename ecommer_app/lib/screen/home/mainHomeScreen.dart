@@ -20,13 +20,13 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   List<ProductDto> productsSale = [];
   List<ProductDto> productsNew = [];
   List<ProductDto> productsNone = [];
+  List<ProductDto> productsCategory = [];
 
   @override
   void initState() {
     super.initState();
-   
+
     fetchData();
-   
   }
 
   Future<void> fetchData() async {
@@ -34,10 +34,11 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       loadding = true;
     });
 
-    productsSale = await Firebasedata.getProducts(1);
-    productsNone = await Firebasedata.getProducts(2);
-    productsNew = await Firebasedata.getProducts(3);
-      
+    productsSale = await Firebasedata.getProducts(1, null);
+    productsNone = await Firebasedata.getProducts(2, null);
+    productsNew = await Firebasedata.getProducts(3, null);
+    productsCategory = await Firebasedata.getProducts(null, 1);
+
     setState(() {
       loadding = false;
     });
@@ -46,9 +47,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body: Center(
-              child: loadding
-        ? CircularProgressIndicator() : Column(
+      body: Center(
+        child: loadding
+            ? CircularProgressIndicator()
+            : Column(
                 children: [
                   Expanded(
                     flex: 9,
@@ -68,7 +70,8 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                           ListProductWidget(
                               listproduct: productsNew,
                               title: 'SẢN PHẨM MỚI NHẤT'),
-                          ListProductCategoryWidget(listProduct: productsNone),
+                          ListProductCategoryWidget(
+                              listProduct: productsCategory),
                           ListProductWidget(
                               listproduct: productsNone,
                               title: 'SẢN PHẨM DÀNH CHO BẠN'),
@@ -79,7 +82,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   Expanded(flex: 1, child: BottomCustom())
                 ],
               ),
-            ),
-          );
+      ),
+    );
   }
 }

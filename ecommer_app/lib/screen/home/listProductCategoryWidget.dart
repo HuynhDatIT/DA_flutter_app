@@ -1,7 +1,10 @@
 import 'package:ecommer_app/common/productItemWidget.dart';
 import 'package:ecommer_app/common/tagWidget.dart';
 import 'package:ecommer_app/model/productDto.dart';
+import 'package:ecommer_app/screen/admin/filter_admin.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/firebasedata.dart';
 
 class ListProductCategoryWidget extends StatefulWidget {
   List<ProductDto> listProduct;
@@ -13,10 +16,18 @@ class ListProductCategoryWidget extends StatefulWidget {
 }
 
 class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
+  bool isSelectQuan = true;
+  bool isSelectAo = false;
+  bool isSelectGiay = false;
+
+  Future<void> fetchData(int categoryId) async {
+    widget.listProduct = await Firebasedata.getProducts(2, categoryId);
+    print(widget.listProduct.length);
+  }
+
   @override
   Widget build(BuildContext context) {
     List<ProductItemWidget> listProductWidget = widget.listProduct
-        .take(2)
         .map(
           (e) => ProductItemWidget(
             product: e,
@@ -34,31 +45,62 @@ class _ListProductCategoryWidgetState extends State<ListProductCategoryWidget> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              TagWidget(title: 'Quần'),
-              TagWidget(
-                title: 'Áo',
-                isSelected: true,
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isSelectQuan = true;
+                      isSelectAo = false;
+                      isSelectGiay = false;
+                      print('Quan');
+                      fetchData(1);
+                    });
+                  },
+                  child: TagWidget(
+                    title: 'Quần',
+                    isSelected: isSelectQuan,
+                  )),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isSelectQuan = false;
+                    isSelectAo = true;
+                    isSelectGiay = false;
+                    print('Ao' + isSelectAo.toString());
+                    fetchData(2);
+                  });
+                },
+                child: TagWidget(
+                  title: 'Áo',
+                  isSelected: isSelectAo,
+                ),
               ),
-              TagWidget(title: 'Giày'),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isSelectQuan = false;
+                      isSelectAo = false;
+                      isSelectGiay = true;
+                      print('Giay');
+                      fetchData(3);
+                    });
+                  },
+                  child: TagWidget(
+                    title: 'Giày',
+                    isSelected: isSelectGiay,
+                  )),
             ],
           ),
         ),
         Container(
             height: MediaQuery.of(context).size.width / 0.8,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: listProductWidget,
-                )),
-                SizedBox(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: listProductWidget,
-                )),
-              ],
+            padding: EdgeInsets.all(5),
+            child: GridView.count(
+              scrollDirection: Axis.horizontal,
+              crossAxisCount: 2,
+              childAspectRatio: 1.7,
+              children: listProductWidget,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 15,
             )),
         const Padding(
           padding: EdgeInsets.only(top: 20, bottom: 20),
