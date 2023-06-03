@@ -34,7 +34,7 @@ class _BottomCustomState extends State<BottomCustom> {
             IconCustomer(Icons.shopping_cart_outlined, "Shoping", Colors.black,
                 ProductScreen(), context),
             IconCustomer(Icons.shopping_bag_outlined, "Bag", Colors.black,
-                MainBag(), context),
+                MainBag(accountId: '1',), context),
             IconCustomer(Icons.person_3_outlined, "Profier", Colors.black,
                 const ProfileView(), context),
           ],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../model/cart.dart';
+
 class SP extends StatefulWidget {
-  SP({super.key});
+  Cart cart;
+  SP({super.key, required this.cart});
   @override
   State<SP> createState() => _SP();
 }
@@ -153,8 +156,7 @@ class _SP extends State<SP> {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image(
-                            image: NetworkImage(
-                                'https://bucket.nhanh.vn/603305-98807/ps/20220514_SNyW5NxiPa0dPihEpckotfko.JPG'),
+                            image: NetworkImage(widget.cart.productImage ?? ''),
                             height: (MediaQuery.of(context).size.height / 7),
                             width: (MediaQuery.of(context).size.width / 4.5),
                             fit: BoxFit.cover,
@@ -201,13 +203,12 @@ class _SP extends State<SP> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(2),
-                        child: Text('Áo sơ mi tay dài'),
+                        child: Text(widget.cart.productName ?? ''),
                       ),
                       Padding(
                         padding: EdgeInsets.all(2),
-                        child: Text('Áo'),
+                        child: Text(widget.cart.productType ?? ''),
                       ),
-                      
                     ],
                   ),
                 ),
@@ -223,14 +224,14 @@ class _SP extends State<SP> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        '100000',
+                        widget.cart.productDiscountPrice.toString(),
                         style: TextStyle(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '120000',
+                        widget.cart.productPrice.toString(),
                         style: TextStyle(
                           decoration: TextDecoration.lineThrough,
                           color: Colors.grey,
@@ -261,7 +262,7 @@ class _SP extends State<SP> {
                         },
                       ),
                       Text(
-                        num.toString(),
+                        widget.cart.quantity.toString(),
                         style: TextStyle(fontSize: 20),
                       ),
                       Container(

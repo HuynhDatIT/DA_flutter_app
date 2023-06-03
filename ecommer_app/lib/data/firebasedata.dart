@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommer_app/model/productDto.dart';
 
+import '../model/cart.dart';
+
 class Firebasedata {
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -115,5 +117,39 @@ class Firebasedata {
         .then((value) => print("cart Added"))
         .catchError((error) => print("Failed to add cart: $error"));
   }
- 
+
+  static Future<List<Cart>> getCart(String accountId) async {
+    List<Cart> listcart = new List<Cart>.filled(
+        0,
+        Cart(
+            id: '',
+            quantity: 0,
+            productId: '',
+            accountId: '',
+            productDiscountPrice: 0,
+            productImage: '',
+            productName: '',
+            productPrice: 0,
+            productType: ''),
+        growable: true);
+
+    Query<Map<String, dynamic>> query =
+        FirebaseFirestore.instance.collection('carts');
+
+    if (accountId != null) {
+      query = FirebaseFirestore.instance
+          .collection('carts')
+          .where('accountId', isEqualTo: accountId);
+    }
+
+    await cart.get().then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        final cart = Cart.fromJson(doc.data() as Map<String, dynamic>);
+        cart.id = doc.id.toString();
+        listcart.add(cart);
+      });
+    });
+    //print('-- ${listProduct[0].id}');
+    return listcart;
+  }
 }
