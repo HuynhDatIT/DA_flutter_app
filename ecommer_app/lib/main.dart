@@ -6,6 +6,7 @@ import 'package:ecommer_app/screen/detail/productWidget.dart';
 import 'package:ecommer_app/screen/home/listProductWidget.dart';
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:ecommer_app/screen/login/login_view.dart';
+import 'package:ecommer_app/screen/order_management/order_management_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommer_app/screen/admin/mainAdmin.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -44,6 +46,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return ProductScreen();
+    return  MainHomeScreen();
   }
 }

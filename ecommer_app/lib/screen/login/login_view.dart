@@ -13,7 +13,7 @@ class LoginView extends StatelessWidget {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             resizeToAvoidBottomInset: false,
-            backgroundColor: Colors.grey.shade400,
+            backgroundColor: Colors.grey.shade100,
             body: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
