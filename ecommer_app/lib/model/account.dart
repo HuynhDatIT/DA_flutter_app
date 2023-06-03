@@ -33,4 +33,10 @@ class Account {
     data['password'] = this.password;
     return data;
   }
+
+  @override
+  String toString() {
+    super.toString();
+    return 'Thông tin user: $username - $email - $password - $id';
+  }
 }
