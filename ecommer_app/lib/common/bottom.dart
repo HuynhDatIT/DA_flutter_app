@@ -1,8 +1,10 @@
-import 'package:ecommer_app/product/productScreen.dart';
+
 import 'package:ecommer_app/screen/admin/mainAdmin.dart';
 import 'package:ecommer_app/screen/bag/mainbag.dart';
 import 'package:ecommer_app/screen/home/mainHomeScreen.dart';
 import 'package:flutter/material.dart';
+
+import '../screen/detail/productScreen.dart';
 
 class BottomCustom extends StatefulWidget {
   const BottomCustom({Key? key}) : super(key: key);

@@ -79,27 +79,23 @@ class MockData {
         'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
     ProductDto(
         'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
-  ];
-  static List<ProductDto> listProductWidget = [
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-    ProductDto('assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000,
-        0, 10),
-  ];
+  ]; 
+   static List<ProductDto> listProductwidget = [
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+    ProductDto(
+        'assets/images/product1.jpg', 'Váy chữ A công sở', 'Quần', 59000, 0, 2),
+  ]; 
 }
