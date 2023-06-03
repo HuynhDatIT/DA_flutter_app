@@ -32,7 +32,7 @@ class ProductInfo extends StatelessWidget {
         Container(
           child: Image.network(
             'https://capvirgo.com/wp-content/uploads/2022/06/wsxc1656255139011_0-600x450.jpg?v=1656231542',
-            width: 450,
+            width: double.infinity,
             height: 200,
             fit: BoxFit.cover,
           ),
@@ -279,6 +279,10 @@ class ProductInfo extends StatelessWidget {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 minimumSize: MaterialStateProperty.all<Size>(Size(325, 50)),
+                shape: MaterialStateProperty.resolveWith<OutlinedBorder>((_) {
+                  return RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15));
+                }),
               ),
             )
           ]),
@@ -470,6 +474,62 @@ class ProductInfo extends StatelessWidget {
             ],
           ),
         ),
+        Row(
+          //trang
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 30, bottom: 10),
+              child: Row(
+                children: [
+                  Text(
+                    'Trang:',
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 17,
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        '1',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      )),
+                  SizedBox(width: 5),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        '2',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      )),
+                  SizedBox(width: 5),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        '3',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      )),
+                ],
+              ),
+            ),
+          ],
+        ),
         SizedBox(height: 15),
         Container(
             margin: EdgeInsets.only(left: 35.0),
@@ -505,6 +565,10 @@ class ProductInfo extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                   minimumSize: MaterialStateProperty.all<Size>(Size(35, 45)),
+                  shape: MaterialStateProperty.resolveWith<OutlinedBorder>((_) {
+                    return RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15));
+                  }),
                 ),
               )
             ])),
