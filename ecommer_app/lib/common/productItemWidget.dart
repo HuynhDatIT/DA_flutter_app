@@ -18,7 +18,11 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ProductInfo(productId: '1',)));
+            context,
+            MaterialPageRoute(
+                builder: (context) => ProductInfo(
+                      productId: '1',
+                    )));
       },
       child: Container(
         // height: widget.height ?? MediaQuery.of(context).size.width / 2.6,
@@ -34,7 +38,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
               borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(7), topLeft: Radius.circular(7)),
               child: Image(
-                image: AssetImage(widget.product.path ?? ''),
+                image: NetworkImage(widget.product.path ?? ''),
                 width: MediaQuery.of(context).size.width / 3.0,
                 height: MediaQuery.of(context).size.width / 2.5,
                 fit: BoxFit.cover,
@@ -59,9 +63,13 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
                     ),
                   ),
                   widget.product.type == 3
-                      ? RowEndSale(widget.product.price.toString(),
-                          widget.product.priceDiscount.toString())
-                      : RowEnd(widget.product.price.toString())
+                      ? RowEndSale(
+                          widget.product.price.toString(),
+                          widget.product.priceDiscount.toString(),
+                          widget.product,
+                          '1')
+                      : RowEnd(
+                          widget.product.price.toString(), widget.product, '1')
                 ],
               ),
             )
@@ -72,7 +80,8 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
   }
 }
 
-Widget RowEndSale(String price, String discountPrice) {
+Widget RowEndSale(String price, String discountPrice, ProductDto productDto,
+    String accountId) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -91,7 +100,9 @@ Widget RowEndSale(String price, String discountPrice) {
           textAlign: TextAlign.start,
         ),
       ),
-      const Expanded(flex: 1, child: Addbutton()),
+      Expanded(
+          flex: 1,
+          child: Addbutton(productDto: productDto, accountId: accountId)),
       Expanded(
         flex: 1,
         child: Text(
@@ -104,12 +115,17 @@ Widget RowEndSale(String price, String discountPrice) {
   );
 }
 
-Widget RowEnd(String price) {
+Widget RowEnd(String price, ProductDto productDto, String accountId) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       const Expanded(flex: 1, child: SizedBox()),
-      const Expanded(flex: 1, child: Addbutton()),
+      Expanded(
+          flex: 1,
+          child: Addbutton(
+            productDto: productDto,
+            accountId: accountId,
+          )),
       Expanded(
         flex: 1,
         child: Text(
