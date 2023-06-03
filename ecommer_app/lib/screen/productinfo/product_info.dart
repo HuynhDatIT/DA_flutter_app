@@ -1,10 +1,16 @@
 import 'package:ecommer_app/common/bottom.dart';
+import 'package:ecommer_app/model/productDto.dart';
 import 'package:flutter/material.dart';
 
-class ProductInfo extends StatelessWidget {
-  String productId;
-  ProductInfo({super.key, required this.productId});
+class ProductInfo extends StatefulWidget {
+  ProductDto productDto;
+  ProductInfo({super.key, required this.productDto});
 
+  @override
+  State<ProductInfo> createState() => _ProductInfoState();
+}
+
+class _ProductInfoState extends State<ProductInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +37,8 @@ class ProductInfo extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          child: Image.network(
-            'https://capvirgo.com/wp-content/uploads/2022/06/wsxc1656255139011_0-600x450.jpg?v=1656231542',
+          child: Image.network(widget.productDto.path ?? ''
+            ,
             width: double.infinity,
             height: 200,
             fit: BoxFit.cover,

@@ -4,10 +4,11 @@ class TagWidget extends StatelessWidget {
   final String title;
   final bool isSelected;
 
-  const TagWidget({super.key, required this.title, this.isSelected = false});
+  const TagWidget({super.key, required this.title, required this.isSelected});
 
   @override
   Widget build(BuildContext context) {
+    print(isSelected.toString());
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
       decoration: BoxDecoration(

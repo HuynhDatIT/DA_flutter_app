@@ -16,7 +16,7 @@ class ListProductWidget extends StatefulWidget {
 class _ListProductWidgetState extends State<ListProductWidget> {
   @override
   Widget build(BuildContext context) {
-    List<ProductItemWidget> listProductSaleWidget =
+    List<ProductItemWidget> listProductWidget =
         widget.listproduct.map((e) => ProductItemWidget(product: e)).toList();
 
     return SizedBox(
@@ -25,13 +25,23 @@ class _ListProductWidgetState extends State<ListProductWidget> {
           Container(
             padding: const EdgeInsets.only(bottom: 10),
             width: double.infinity,
-            child: Text(
-              widget.title,
-              style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.start,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    widget.title,
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                Text(
+                  'View all (${listProductWidget.length.toString()})',
+                  style: TextStyle(fontSize: 10, color: Colors.black),
+                )
+              ],
             ),
           ),
           Container(
@@ -39,7 +49,7 @@ class _ListProductWidgetState extends State<ListProductWidget> {
             child: SizedBox(
               child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: listProductSaleWidget),
+                  children: listProductWidget),
             ),
           ),
           const Padding(
