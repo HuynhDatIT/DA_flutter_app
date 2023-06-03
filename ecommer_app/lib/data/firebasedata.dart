@@ -13,10 +13,10 @@ class Firebasedata {
           'path': 'assets/images/product1.jpg',
           'name': 'Váy chữ A công sở',
           'categoryName': 'Quần',
-          'categoryId': '1',
+          'categoryId': '1', //1-quan 2-ao 3-giay
           'price': 59000,
           'priceDiscount': 100000,
-          'type': 3
+          'type': 3 //1-sale 3-new 2-none
         })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
