@@ -1,6 +1,9 @@
+import 'package:ecommer_app/common/addbutton.dart';
 import 'package:ecommer_app/common/bottom.dart';
 import 'package:ecommer_app/model/productDto.dart';
 import 'package:flutter/material.dart';
+
+import '../../common/productItemWidget.dart';
 
 class ProductInfo extends StatefulWidget {
   ProductDto productDto;
@@ -37,46 +40,65 @@ class _ProductInfoState extends State<ProductInfo> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          child: Image.network(widget.productDto.path ?? ''
-            ,
+          child: Image.network(
+            widget.productDto.path ?? '',
             width: double.infinity,
-            height: 200,
+            height: 325,
             fit: BoxFit.cover,
           ),
         ),
         SizedBox(height: 10),
         Container(
-          child: const Text(
-            '   NIKE DUNK LOW RETRO “JUDGE GREY',
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '   ',
+          child: Row(children: [
+            SizedBox(width: 10),
+            Text(
+              widget.productDto.name ?? '',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
-              TextSpan(
-                  text: '1.000.000',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 255, 0, 0),
-                    decoration: TextDecoration.lineThrough,
-                    fontSize: 14,
-                  )),
-              TextSpan(
-                  text: '   100.000',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ))
-            ]),
-          ),
+            ),
+          ]),
+        ),
+        SizedBox(height: 2),
+        Container(
+          child: Row(children: [
+            SizedBox(width: 10),
+            Text(
+              widget.productDto.category ?? '',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ]),
+        ),
+        SizedBox(height: 5),
+        Container(
+          child: Row(children: [
+            SizedBox(width: 10),
+            Text("Gía:  ",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontSize: 18,
+                )),
+            SizedBox(width: 20),
+            Text(widget.productDto.priceDiscount.toString(),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 0, 0),
+                  decoration: TextDecoration.lineThrough,
+                  fontSize: 14,
+                )),
+            SizedBox(width: 20),
+            Text(widget.productDto.price.toString(),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
+          ]),
         ),
         SizedBox(height: 10),
         Container(
@@ -90,189 +112,103 @@ class _ProductInfoState extends State<ProductInfo> {
         ),
         SizedBox(height: 5),
         Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Loại sản phẩm:              ',
+          child: Row(
+            children: [
+              SizedBox(width: 50),
+              Text('Loại sản phẩm:',
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 15,
                     fontFamily: 'Rufina',
                     fontWeight: FontWeight.bold,
                   )),
-              TextSpan(
-                text: 'Giaỳ sneaker',
+              SizedBox(width: 40),
+              Text(
+                widget.productDto.category ?? '',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 15,
                   fontFamily: 'Rufina',
                 ),
-              ),
-            ]),
+              )
+            ],
           ),
         ),
         SizedBox(height: 5),
         Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Màu:                                ',
+          child: Row(
+            children: [
+              SizedBox(width: 50),
+              Text('Gía: ',
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 15,
                     fontFamily: 'Rufina',
                     fontWeight: FontWeight.bold,
                   )),
-              TextSpan(
-                text: 'Trắng',
+              SizedBox(width: 110),
+              Text(
+                widget.productDto.priceDiscount.toString(),
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 15,
                   fontFamily: 'Rufina',
                 ),
-              ),
-            ]),
+              )
+            ],
           ),
         ),
         SizedBox(height: 5),
         Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Mức giá:                         ',
+          child: Row(
+            children: [
+              SizedBox(width: 50),
+              Text('Gía khuyến mãi: ',
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 15,
                     fontFamily: 'Rufina',
                     fontWeight: FontWeight.bold,
                   )),
-              TextSpan(
-                text: '1triệu - 2triệu',
+              SizedBox(width: 28),
+              Text(
+                widget.productDto.price.toString(),
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 15,
                   fontFamily: 'Rufina',
                 ),
-              ),
-            ]),
+              )
+            ],
           ),
         ),
         SizedBox(height: 5),
         Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Size:                                ',
+          child: Row(
+            children: [
+              SizedBox(width: 50),
+              Text('Tên sản phẩm:',
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 15,
                     fontFamily: 'Rufina',
                     fontWeight: FontWeight.bold,
                   )),
-              TextSpan(
-                text: '40, 41, 42, 43',
+              SizedBox(width: 40),
+              Text(
+                widget.productDto.name ?? '',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 15,
                   fontFamily: 'Rufina',
                 ),
-              ),
-            ]),
-          ),
-        ),
-        SizedBox(height: 5),
-        Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Thương hiệu:                 ',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 15,
-                    fontFamily: 'Rufina',
-                    fontWeight: FontWeight.bold,
-                  )),
-              TextSpan(
-                text: 'Nike',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 15,
-                  fontFamily: 'Rufina',
-                ),
-              ),
-            ]),
-          ),
-        ),
-        SizedBox(height: 5),
-        Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Xuất xứ:                          ',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 15,
-                    fontFamily: 'Rufina',
-                    fontWeight: FontWeight.bold,
-                  )),
-              TextSpan(
-                text: 'Việt Nam',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 15,
-                  fontFamily: 'Rufina',
-                ),
-              ),
-            ]),
-          ),
-        ),
-        SizedBox(height: 5),
-        Container(
-          child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: '            ',
-              ),
-              TextSpan(
-                  text: 'Tình trang:                     ',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 15,
-                    fontFamily: 'Rufina',
-                    fontWeight: FontWeight.bold,
-                  )),
-              TextSpan(
-                text: 'Chưa sử dụng',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 15,
-                  fontFamily: 'Rufina',
-                ),
-              ),
-            ]),
+              )
+            ],
           ),
         ),
         SizedBox(height: 25),
         Container(
-          margin: const EdgeInsets.only(left: 50.0),
+          margin: const EdgeInsets.only(left: 35.0),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             ElevatedButton(
               child: const Text(
@@ -282,7 +218,7 @@ class _ProductInfoState extends State<ProductInfo> {
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              onPressed: () {},
+              onPressed: (){},
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 minimumSize: MaterialStateProperty.all<Size>(Size(325, 50)),
@@ -352,7 +288,7 @@ class _ProductInfoState extends State<ProductInfo> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 35),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: Row(
@@ -539,17 +475,17 @@ class _ProductInfoState extends State<ProductInfo> {
         ),
         SizedBox(height: 15),
         Container(
-            margin: EdgeInsets.only(left: 35.0),
+            margin: EdgeInsets.only(left: 15.0),
             child: Row(children: [
               CircleAvatar(
                   maxRadius: 16,
                   child: Image.network(
                       'https://capvirgo.com/wp-content/uploads/2022/06/wsxc1656255139011_0-600x450.jpg?v=1656231542')),
               SizedBox(
-                width: 5.0,
+                width: 5,
               ),
               const SizedBox(
-                  width: 275,
+                  width: 250,
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: ' Nhập bình luận',
