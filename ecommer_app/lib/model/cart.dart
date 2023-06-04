@@ -1,12 +1,11 @@
-
 class Cart {
   String? id;
   int? quantity;
   String? productId;
   String? accountId;
   String? productName;
-  double? productPrice;
-  double? productDiscountPrice;
+  int? productPrice;
+  int? productDiscountPrice;
   String? productType;
   String? productImage;
 

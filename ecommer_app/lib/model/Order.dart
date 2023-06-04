@@ -1,14 +1,14 @@
-class Order {
+class OrderDto {
   String? id;
   String? orderCode;
   String? status;
-  String? total;
+  int? total;
   String? accountId;
 
-  Order(
+  OrderDto(
       {this.id, this.orderCode, this.status, this.total, this.accountId});
 
-  Order.fromJson(Map<String, dynamic> json) {
+  OrderDto.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     orderCode = json['orderCode'];
     status = json['status'];

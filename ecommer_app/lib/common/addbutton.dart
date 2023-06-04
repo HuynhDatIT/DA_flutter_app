@@ -6,7 +6,8 @@ import '../data/firebasedata.dart';
 class Addbutton extends StatelessWidget {
   ProductDto productDto;
   String accountId;
-   Addbutton({Key? key, required this.productDto, required this.accountId}) : super(key: key);
+  Addbutton({Key? key, required this.productDto, required this.accountId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +15,10 @@ class Addbutton extends StatelessWidget {
       onTap: () async {
         // final products = await Firebasedata.getProducts();
         // print(products.length);
-       // Firebasedata.addCart(productDto, accountId, 1);
-         Firebasedata.addProductNew();
-         Firebasedata.addProductSale();
-        Firebasedata.addProduct();
+        Firebasedata.addCart(productDto, accountId, 1);
+        //  Firebasedata.addProductNew();
+        //  Firebasedata.addProductSale();
+        // Firebasedata.addProduct();
       },
       child: const Image(
         image: AssetImage('assets/icons/add.png'),

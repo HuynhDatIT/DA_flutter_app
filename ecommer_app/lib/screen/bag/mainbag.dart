@@ -4,7 +4,8 @@ import 'screenbag.dart';
 import 'notification.dart';
 
 class MainBag extends StatelessWidget {
-  const MainBag({super.key});
+  String accountId;
+  MainBag({super.key, required this.accountId});
 
   // This widget is the root of your application.
   @override
@@ -12,7 +13,12 @@ class MainBag extends StatelessWidget {
     return Scaffold(
         body: Container(
             child: ListView(
-      children: [Giohang(), BottomCustom()],
+      children: [
+        Giohang(
+          accountId: '1',
+        ),
+        BottomCustom()
+      ],
     )));
   }
 }
